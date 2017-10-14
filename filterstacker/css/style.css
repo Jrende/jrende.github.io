@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+#glCanvas {
+  background-color: black;
+  flex-grow: 1;
+}
+
+.orderlist {
+  width: 20em;
+}
+
+ul.orderlist li {
+  margin: 0;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 1em;
+  list-style-type: none;
+  background-color: lightgray;
+}
+
+ul.orderlist header {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify: space-between;
+}
+
+header .toggle-controls {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: white;
+}
+
+.orderlist h1 {
+  font-size: 12pt;
+  margin: 0;
+  padding: 0;
+  flex: 8
+}
+
+.remove-button {
+  background: none;
+  border-radius: 100%;
+  border: 0px solid black;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  width: 20px;
+  height: 20px;
+  float: right;
+  background: gainsboro;
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  top: 10px;
+  left: -10px;
+}
+
+.remove-button:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.20);
+}
+
+.remove-button:active {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+
+header .removeButton:hover {
+  background-color: gray;
+}
+
+ul.orderlist div.showhide {
+  flex: 1;
+}
+
+.showhide button {
+  border: 0;
+  color: white;
+  background: none;
+  cursor: -moz-pointer;
+  cursor: -webkit-pointer;
+  cursor: -ms-pointer;
+  cursor: pointer;
+}
+
+ul.orderlist header h1:hover {
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  cursor: -ms-grab;
+  cursor: grab;
+}
+
+ul.orderlist header h1:active {
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+  cursor: -ms-grab;
+  cursor: grabbing;
+}
+
+ul.orderlist section {
+  margin-left: 2em;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+
+form label {
+  display: block;
+}
+form h1 {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+form input[type="range"] {
+  width: 100%;
+}
+.manualInput {
+  float:right;
+  width: 4em;
+}
+select.blend {
+  float: right;
+}
+label {
+  float:left;
+}
+fieldset {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+fieldset div {
+  clear: both;
+  overflow: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.filterSelect {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: -1em;
+}
+.mainFieldset {
+  border: 0;
+}
+.yesno {
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+form {
+  margin-top: 0.5em;
+}
+input {
+  margin: 0;
+  padding: 2px;
+}
+form input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+  margin-left: 1em;
+  vertical-align: middle;
+}
+
+.addButton {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border: 0;
+  border-radius: 0 0 2em/1em 0;
+  background-color: lightgray;
+  position: relative;
+  top: -3px;
+}
+
+.addButton:hover {
+  background-color: gray;
+}
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input[type="checkbox"] {
+}
+
+form input.color-slider {
+  -webkit-appearance: slider-vertical;
+  -moz-appearance: slider-vertical;
+  display: inline-block;
+  width: 1em;
+  height: 10em;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+#show {
+  float: right;
+}

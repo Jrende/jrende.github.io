@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="filtrstackr">
+<head>
+<meta charset="utf-8">
+<title>Filtre</title>
+<link rel="stylesheet" href="css/app.css"/>
+<link rel="stylesheet" href="css/seed.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/colorpicker.css"/>
+<style id="outline-toggle"></style>
+</head>
+<body ng-controller="main"
+  onkeydown="document.getElementById('outline-toggle').textContent = ''"
+  onmousedown="document.getElementById('outline-toggle').textContent = ':focus { outline: 0; }'"
+  >
+	<sortable fs-model='filters' class="orderlist">
+	</sortable>
+	<scene></scene>
+
+	<ul id="show">
+		<li ng-repeat="filter in filters">
+		{{filter.name}}
+		<ul>
+			<li>
+			id: {{filter["id"]}}
+			</li>
+			<li>
+			type: {{filter["type"]}}
+			</li>
+			<li ng-repeat="parameter in filter.type.parameters">
+			{{parameter}}: {{filter[parameter]}}
+			</li>
+		</ul>
+		</li>
+	</ul>
+	<script src="lib/jquery-2.0.3.min.js"></script>
+	<script src="lib/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="lib/lodash.min.js"></script>
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-route.min.js"></script>
+	<script src="filtrStackr.min.js"></script>
+	<script src="lib/bootstrap-colorpicker-module.js"></script>
+</body>
+</html>

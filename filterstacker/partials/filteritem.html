@@ -1,0 +1,12 @@
+<div ng-controller="filterItem">
+  <header>
+    <h1>{{fsItem.type.name}} {{fsItem.id}}</h1>
+    <div class="showhide" ng-switch on="getVis(fsItem)">
+      <button ng-switch-when="true" ng-click="toggle(fsItem)">▼</button>
+      <button ng-switch-when="false" ng-click="toggle(fsItem)">►</button>
+      <button ng-switch-default>def</button>
+    </div>
+  </header>
+  <button ng-show="visibility[fsItem.id]" class="remove-button" ng-click="removeFilter(fsItem)">X</button>
+  <section ng-show="visibility[fsItem.id]" fs-filter-control="fsItem">{{fsItem.content}}</section>
+</div>

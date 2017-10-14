@@ -1,0 +1,20 @@
+<fieldset>
+  <input class="manualInput" min="0" max="100" value="1" type="number" ng-model="fsFilterControl.scale">
+  <label>Scale</label>
+  <input type="range" min="0" max="100" value="1" ng-model="fsFilterControl.scale">
+</fieldset>
+
+<fieldset>
+  <input class="manualInput" min="-50" max="50" value="0" type="number" ng-model="fsFilterControl.x">
+  <label>X</label>
+  <input type="range" min="-50" max="50" value="0" ng-model="fsFilterControl.x">
+
+  <input class="manualInput" min="-50" max="50" value="0" type="number" ng-model="fsFilterControl.y">
+  <label>Y</label>
+  <input type="range" min="-50" max="50" value="0" ng-model="fsFilterControl.y">
+</fieldset>
+
+<fieldset>
+  <legend>Color</legend>
+  <input colorpicker ng-model="color" to-Rgb="fsFilterControl"></input>
+</fieldset>

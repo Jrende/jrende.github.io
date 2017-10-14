@@ -1,0 +1,13 @@
+<fieldset>
+	<label for="seed">Random seed</label>
+	<seed class="center" ng-model="fsFilterControl.seed" name="seed" />
+</fieldset>
+<fieldset>
+	<input type="number" class="manualInput" ng-model="fsFilterControl.size" ng-change="setFilter()" name="size" />
+	<label for="size">Size</label>
+	<input type="range" ng-model="fsFilterControl.size" ng-change="setFilter()"/>
+</fieldset>
+<fieldset>
+	<legend>Color</legend>
+	<input colorpicker ng-model="color" to-Rgb="fsFilterControl"></input>
+</fieldset>

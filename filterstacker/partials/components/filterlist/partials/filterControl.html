@@ -1,0 +1,31 @@
+<form ng-controller="filterFormCtrl" ng-submit="submit()"> 
+	<h1>{{fsFilterControl.type.name}}</h1>
+	<fieldset> 
+		<fieldset class="filterSelect"> 
+			<select fs-select="fsFilterControl.type" fs-sel-type="type" ng-click="changeType(fsFilterControl.type)">
+				<option ng-if="fsFilterControl.type.id == 'undefined'">
+				</option>
+				<option ng-repeat="type in types | filter:{id: '!undefined'}" ng-selected="fsFilterControl.type.id === type.id" value="{{type.id}}">
+					{{type.name}}
+				</option>
+			</select>
+		</fieldset> 
+
+		<fieldset ng-include src="'partials/' + fsFilterControl.type.id + '.html'" class="mainFieldset" />
+
+		<fieldset class="blend" ng-if="fsFilterControl.type.id !== 'undefined'"> 
+			<label for="blend">Blending mode</label>
+			<select name="blend" class="blend" fs-select="fsFilterControl.blendMode" fs-sel-type="blend">
+				<option ng-selected="{{fsFilterControl.blendMode.id == blendMode.id}}" ng-repeat="blendMode in blendModes" value="{{blendMode.id}}">
+					{{blendMode.name}}
+				</option>
+			</select>
+		</fieldset> 
+
+		<fieldset ng-if="fsFilterControl.type.id !== 'undefined'">
+			<label for="alpha">Alpha</label>
+			<input class="manualInput" name="alpha" type="number" ng-model="fsFilterControl.alpha" value="1.0" max="1.0" min="0.0" step="0.01"></input>
+			<input name="alpha" type="range" ng-model="fsFilterControl.alpha" value="1.0" max="1.0" min="0.0" step="0.01"></input>
+		</fieldset>
+	</fieldset> 
+</form>

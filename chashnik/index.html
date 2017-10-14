@@ -1,0 +1,86 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <title>This is art!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!--link rel="stylesheet" href="styles/main.css"-->
+    </head>
+    <style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+audio {
+  display: none;
+}
+
+#mute {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  bottom: 0;
+  left: 0;
+}
+    </style>
+    <body>
+        <img src="Speaker_Icon.svg" id="mute">
+        <audio src="pappa57-2.mp3" controls loop autoplay></audio>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+        <script id="fragmentShader" type="x-shader/x-fragment">
+          float rand(float n){
+            return fract(sin(n) * 43758.5453123);
+          }
+
+          float rand(vec2 n) { 
+              return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+          }
+
+          float noise(float p){
+              float fl = floor(p);
+            float fc = fract(p);
+              return mix(rand(fl), rand(fl + 1.0), fc);
+          }
+
+          float noise(vec2 n) {
+              const vec2 d = vec2(0.0, 1.0);
+            vec2 b = floor(n), f = smoothstep(vec2(0.0), vec2(1.0), fract(n));
+              return mix(mix(rand(b), rand(b + d.yx), f.x), mix(rand(b + d.xy), rand(b + d.yy), f.x), f.y);
+          }
+
+          void main(void) {
+            float n = noise(gl_FragCoord.xy);
+            gl_FragColor = vec4(n, n, n, 0.2);
+          }
+        </script>
+        <script>
+var vid = document.getElementsByTagName("audio")[0];
+vid.volume = 0.2;
+vid.addEventListener("timeupdate", function() {
+  if(vid.currentTime > 13.30) {
+    vid.currentTime = 0
+  }
+});
+var m = document.querySelector("#mute");
+m.addEventListener("click", function(e) {
+  e.stopPropagation();
+    if(vid.paused) {
+      m.src = "Speaker_Icon.svg";
+      vid.play();
+    } else {
+      m.src = "Mute_Icon.svg";
+      vid.pause();
+    }
+});
+        </script>
+    <script src="bundle.js"></script></body>
+</html>

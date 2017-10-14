@@ -1,0 +1,229 @@
+p,
+a,
+li {
+  font-family: "Roboto Slab", "noto", serif;
+  font-size: 18pt;
+  line-height: 1.5;
+  text-shadow: 1px 1px 2px #afafaf;
+}
+h1,
+h2,
+h3 {
+  font-family: "Work Sans", sans-serif;
+}
+h1 {
+  font-size: 4vw;
+}
+h2 {
+  font-size: 2vw;
+}
+.minor-project h2 {
+  font-size: 20pt;
+}
+@media (max-width: 1500px) {
+  h1 {
+    font-size: 45pt;
+  }
+  h2 {
+    font-size: 22.5pt;
+  }
+}
+body {
+  background-color: #D3BBB4;
+}
+header {
+  background-color: #523956;
+  color: #B39090;
+}
+h2 {
+  color: #523956;
+}
+p,
+li,
+h3 {
+  color: #2E1E3A;
+}
+.content section {
+  background-color: #B39090;
+}
+.big {
+  background-color: #705264;
+  color: #B39090;
+}
+.big p {
+  color: #D3BBB4;
+}
+a {
+  color: #1200ff;
+  text-decoration-color: #7a60ef;
+}
+a span {
+  color: #523956;
+}
+a:visited {
+  color: #58008e;
+  text-decoration-color: #58008e;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  transform: skewY(10deg);
+  transform-origin: left;
+  max-width: 150em;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .content {
+    display: block;
+  }
+  .wide {
+    width: unset !important;
+  }
+}
+.myself {
+  width: 50%;
+  height: auto;
+  float: right;
+  clip-path: ellipse();
+  shape-outside: ellipse();
+  margin: 1em;
+}
+@media (max-width: 800px) {
+  .myself {
+    float: none;
+  }
+}
+header {
+  grid-column: span 2;
+  margin: 0;
+  display: flex;
+}
+header h1 {
+  margin: auto;
+  margin-left: 0.5em;
+}
+.content section.social {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 10em;
+}
+@media (max-width: 800px) {
+  .content section.social {
+    margin: 2em;
+  }
+}
+.content section.social a {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1em;
+}
+.content section.social a span {
+  margin: 0 1em;
+  font-size: 24pt;
+}
+.content > section > p,
+.content > section > div {
+  transform: skewY(-10deg);
+  transform-origin: left;
+}
+.content section {
+  padding: 1em;
+  margin: 2em 2em;
+}
+.content section > h2 {
+  margin: 0 0.5em 10%;
+}
+.half {
+  flex: 1 1;
+}
+.wide {
+  width: 100%;
+}
+.minor-project {
+  max-width: 400px;
+  margin: 2em;
+}
+.minor-project h2,
+.minor-project p {
+  margin: 0;
+}
+.minor-project h2 {
+  margin: 0.5em 0;
+}
+@media (max-width: 500px) {
+  .minor-project div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .minor-project div .left,
+  .minor-project div .right {
+    float: none;
+    margin: 0 auto;
+  }
+}
+.minor-project.left {
+  text-align: left;
+}
+.minor-project.left img {
+  float: left;
+}
+.minor-project.right {
+  text-align: right;
+}
+.minor-project.right img {
+  float: right;
+}
+.minor-project img {
+  max-width: 50%;
+  max-height: 400px;
+  height: auto;
+  clip-path: circle();
+  shape-outside: circle();
+  margin: 1em;
+}
+.minor-projects {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.hondo-desc .text {
+  margin: 1em;
+}
+.hondo-desc {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  margin: 0 2em;
+}
+.hondo-desc .large-img img {
+  width: 100%;
+  height: auto;
+  min-height: 5em;
+  max-height: 30em;
+  object-fit: cover;
+}
+.hondo-img a {
+  margin: 0 auto;
+}
+.hondo-img img {
+  width: 100%;
+  height: auto;
+  min-height: 5em;
+  max-width: 400px;
+  clip-path: circle();
+  shape-outside: circle();
+  margin: 1em 0;
+}
+.hondo-img {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=app.css.map*/

@@ -1,0 +1,7 @@
+<div>
+  <ul class="orderlist">
+    <li filteritem ng-repeat="item in fsModel" fs-item="item" fs-id="{{$index}}">
+    </li>
+  </ul>
+  <button class="addButton"ng-click="$parent.newFilter()">Add filter</button>
+</div>
